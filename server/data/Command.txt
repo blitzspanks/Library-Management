@@ -1,0 +1,1 @@
+mongod --dbpath "C:\Users\Vaibhav\Desktop\Omkar\Web Development\Library Management System\server\data"

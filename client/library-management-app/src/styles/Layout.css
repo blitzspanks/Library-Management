@@ -1,0 +1,17 @@
+/* Layout.css */
+.layout {
+    background-color: #4CAF50; /* Green background */
+    color: #000; /* Black text color */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  /* Additional styling for Header and Footer can be added here */
+  
