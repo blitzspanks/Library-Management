@@ -7,12 +7,6 @@ const bookSchema = new mongoose.Schema({
     type: String, //Displays the Title of the Book
     required: true,
   },
-  authors: [
-    {
-      type: String,
-      required: true, //Displays author/s of the Book
-    },
-  ],
   ISBN: {
     type: String,
     unique: true,
@@ -24,16 +18,9 @@ const bookSchema = new mongoose.Schema({
   publicationYear: {
     type: Number, //Displays the Year of Publication
   },
-  copiesAvailable: {
-    type: Number, //Tells the user the amount of copies available
-    default: 1,
-  },
   isAvailable: {
     type: Boolean, //Tells the user if book is available
     default: true,
-  },
-  coverImageURL: {
-    type: String, // Store the URL of the cover image
   },
 });
 

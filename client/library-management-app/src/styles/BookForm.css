@@ -1,6 +1,4 @@
-/* BookForm.css */
 
-/* Container for the form
 .book-form-container {
     max-width: 400px;
     margin: 0 auto;
@@ -8,14 +6,13 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f5f5f5;
-  }*/
+  }
   
-  /* Title styles 
   .book-form-container h2 {
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 20px;
-  }*/
+  }
   
   /* Form groups 
   .form-group {
@@ -33,48 +30,11 @@
   input[type="number"],
   input[type="checkbox"],
   input[type="submit"] {
-    width: 80%;
+    width: 60%;
     padding: 5px;
     margin: 6px 7px;
     border: 2px solid #000000;
     border-radius: 3px;
+    font: 40px;
   }
-  
-  /* Author field 
-  .author-field {
-    display: flex;
-    align-items: center;
-  }*/
-  
-  /* Remove author button
-  .author-field button {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    padding: 4px 8px;
-    margin-left: 10px;
-    cursor: pointer;
-  }*/
-  
-  /* Add author button 
-  .form-group .add-author-button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    padding: 8px 16px;
-    cursor: pointer;
-  }*/
-  
-  /* Submit button 
-  .submit-button {
-    background-color: #0be716;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-  }*/
   

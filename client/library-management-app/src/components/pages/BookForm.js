@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-import '../../styles/BookForm.css'; // Import a CSS file for styling (create this file with your styles)
+import '../../styles/BookForm.css'; // Import a CSS file for styling
 
 const BookForm = () => {
   const [bookData, setBookData] = useState({
     title: '',
-    authors: [''],
     ISBN: '',
     genre: '',
     publicationYear: '',
-    copiesAvailable: 1,
-    isAvailable: true,
-    coverImageURL: '',
+    isAvailable: '',
   });
 
   const handleChange = (event) => {
@@ -21,35 +18,30 @@ const BookForm = () => {
     });
   };
 
-  const handleAuthorChange = (event, index) => {
-    const authors = [...bookData.authors];
-    authors[index] = event.target.value;
-    setBookData({
-      ...bookData,
-      authors,
-    });
-  };
+  const handleSubmit = async (event) => {
+  event.preventDefault();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle the submission of bookData, e.g., send it to the server.
-  };
-
-  const addAuthorField = () => {
-    setBookData({
-      ...bookData,
-      authors: [...bookData.authors, ''],
+  try {
+    const response = await fetch('http://localhost:3001/books', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(bookData),
     });
-  };
 
-  const removeAuthorField = (index) => {
-    const authors = [...bookData.authors];
-    authors.splice(index, 1);
-    setBookData({
-      ...bookData,
-      authors,
-    });
-  };
+    if (response.ok) {
+      // Optionally handle success (e.g., redirect to another page)
+      console.log('Book submitted successfully');
+    } else {
+      const errorData = await response.json();
+      throw new Error(errorData.error);
+    }
+  } catch (error) {
+    console.error('Error submitting book:', error.message);
+  }
+};
+
 
   return (
     <div>
@@ -63,24 +55,6 @@ const BookForm = () => {
             value={bookData.title}
             onChange={handleChange}
           />
-        </div>
-        <div>
-          <label>Authors:</label>
-          {bookData.authors.map((author, index) => (
-            <div key={index}>
-              <input
-                type="text"
-                value={author}
-                onChange={(e) => handleAuthorChange(e, index)}
-              />
-              <button type="button" onClick={() => removeAuthorField(index)}>
-                Remove Author
-              </button>
-            </div>
-          ))}
-          <button type="button" onClick={addAuthorField}>
-            Add Author
-          </button>
         </div>
         <div>
           <label>ISBN:</label>
@@ -110,31 +84,13 @@ const BookForm = () => {
           />
         </div>
         <div>
-          <label>Copies Available:</label>
-          <input
-            type="number"
-            name="copiesAvailable"
-            value={bookData.copiesAvailable}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label>Is Available:</label>
-          <input
-            type="checkbox"
-            name="isAvailable"
-            checked={bookData.isAvailable}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label>Cover Image URL:</label>
+          <label>Is Available:
           <input
             type="text"
-            name="coverImageURL"
-            value={bookData.coverImageURL}
-            onChange={handleChange}
+            name="isAvailable"
+            value='Yes'
           />
+          </label>
         </div>
         <button type="submit">Submit</button>
       </form>

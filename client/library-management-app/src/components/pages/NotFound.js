@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import "../../styles/NotFound.css"
 
 const NotFound = () => {
   const history = useNavigate();
@@ -8,19 +9,12 @@ const NotFound = () => {
     history('/homepage');
   };
 
-  console.log('Rendering NotFound component'); // Add this line
+  console.log('Rendering NotFound component'); // Add this line for debugging
 
   return (
     <div>
       <h2>Page Not Found</h2>
-      <p>The page you're looking for does not exist.</p>
-
-      {/* Static navigation link to the homepage using the Link component */}
-      <Link to="/homepage">Go to Homepage</Link>
-
-      <br />
-
-      {/* Dynamic navigation button to the homepage using the useHistory hook */}
+      {/* Dynamic navigation button to the homepage using the useNavigate hook */}
       <button onClick={navigateToHomepage}>Go to Homepage</button>
     </div>
   );

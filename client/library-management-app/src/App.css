@@ -12,12 +12,14 @@ h1 {
   font-size: 2rem;
   margin-bottom: 16px;
   text-align: center;
+  color:#fff;
 }
 
 p {
   font-size: 1rem;
   margin-bottom: 24px;
   text-align: center;
+  color:#fff;
 }
 
 button {

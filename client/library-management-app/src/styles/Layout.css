@@ -1,7 +1,6 @@
 /* Layout.css */
 .layout {
-    background-color: #4CAF50; /* Green background */
-    color: #000; /* Black text color */
+    background-color: #D6D6D7;
     min-height: 100vh;
     display: flex;
     flex-direction: column;

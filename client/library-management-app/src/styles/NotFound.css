@@ -1,0 +1,31 @@
+/* NotFound.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+  
+  div {
+    font-size: 24px; /* Set the desired font size */
+  }
+  
+  p {
+    color: #000; /* Set the color to black */
+  }
+  
+  button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 32px; /* Set the desired font size */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  

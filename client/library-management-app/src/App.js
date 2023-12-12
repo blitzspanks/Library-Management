@@ -6,7 +6,9 @@ import NotFound from './components/pages/NotFound';
 import BookList from './components/pages/BookList';
 import ErrorHandler from './components/pages/ErrorHandler';
 import BookForm from './components/pages/BookForm';
+import DeleteBook from './components/pages/DeleteBook';
 import './App.css';
+import UpdateBook from './components/pages/Update';
 
 const App = () => {
   return (
@@ -33,7 +35,7 @@ const App = () => {
             path="/books"
             element={
               <Layout>
-                <BookList />
+                <BookList books={[]}/>
               </Layout>
             }
           />
@@ -42,6 +44,22 @@ const App = () => {
             element={
               <Layout>
                 <BookForm />
+              </Layout>
+            }
+          />
+          <Route
+            path="/delete"
+            element={
+              <Layout>
+                <DeleteBook />
+              </Layout>
+            }
+          />
+          <Route
+            path="/update"
+            element={
+              <Layout>
+                <UpdateBook />
               </Layout>
             }
           />
