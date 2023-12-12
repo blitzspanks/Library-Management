@@ -10,10 +10,6 @@ body {
     font-size: 24px; /* Set the desired font size */
   }
   
-  p {
-    color: #000; /* Set the color to black */
-  }
-  
   button {
     background-color: #3498db;
     color: #fff;
@@ -29,3 +25,7 @@ body {
     background-color: #2980b9;
   }
   
+  .page-not-found {
+    color: red;
+    font-size: 60px;
+  }

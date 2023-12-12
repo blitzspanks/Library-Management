@@ -13,7 +13,7 @@ const NotFound = () => {
 
   return (
     <div>
-      <h2>Page Not Found</h2>
+      <h2 className='page-not-found'>Page Not Found</h2>
       {/* Dynamic navigation button to the homepage using the useNavigate hook */}
       <button onClick={navigateToHomepage}>Go to Homepage</button>
     </div>
